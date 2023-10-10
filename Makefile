@@ -1,18 +1,18 @@
 .PHONY: clean, flash
-CROSS_COMPILE =/opt/cross-pi-gcc/bin/arm-linux-gnueabihf-
-LIBRARY_PATH=/home/vienchau/build-example/pi/lib
-INCLUDE_PATH=/home/vienchau/build-example/pi/include
+# CROSS_COMPILE =/opt/cross-pi-gcc/bin/arm-linux-gnueabihf-
+# LIBRARY_PATH=/home/vienchau/build-example/pi/lib
+# INCLUDE_PATH=/home/vienchau/build-example/pi/include
 CC = $(CROSS_COMPILE)gcc
-# LIBRARY_PATH=/home/vienchau/build/local/lib
-# INCLUDE_PATH=/home/vienchau/build/local/include
+LIBRARY_PATH=/home/vienct3/build/local/lib
+INCLUDE_PATH=/home/vienct3/build/local/include
 
 STD = gnu99
 CFLAGS =-Wall \
 	-g \
 	-I./include \
 	-I$(INCLUDE_PATH) \
-	# -fsanitize=address \
-	# -fsanitize=leak \
+	-fsanitize=address \
+	-fsanitize=leak \
 
 	
 LDFLAGS =-L$(LIBRARY_PATH) \
